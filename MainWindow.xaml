@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:U5Quadratic"
         mc:Ignorable="d"
-        Title="MainWindow" MaxHeight="500" MaxWidth="650" MinHeight="500" MinWidth="650">
+        Title="Quadratic Calculator" MaxHeight="500" MaxWidth="650" MinHeight="500" MinWidth="650">
 
     <Canvas x:Name="canvas">
-        <TextBox x:Name="txtA" Text="a" Canvas.Left="10" Canvas.Top="10" />
-        <TextBox x:Name="txtB" Text="b" Canvas.Left="42" Canvas.Top="8" />
-        <TextBox x:Name="txtC" Text="c" Canvas.Left="73" Canvas.Top="10" />
-        <Button x:Name="btnRun" Content="Calculate" Click="btnRun_Click" Canvas.Left="10" Canvas.Top="39" Width="75" />
-        <Label x:Name="lblOutput" Content="" Canvas.Left="336" Canvas.Top="8" />
+        <TextBox x:Name="txtA" Text="a" Canvas.Left="10" Canvas.Top="16" Width="30" RenderTransformOrigin="1.048,0.594" />
+        <TextBox x:Name="txtB" Text="b" Canvas.Left="45" Canvas.Top="16" Height="18" Width="30" />
+        <TextBox x:Name="txtC" Text="c" Canvas.Left="80" Canvas.Top="16" Width="33" RenderTransformOrigin="-0.803,0.656" />
+        <Button x:Name="btnRun" Content="Calculate" Click="btnRun_Click" Canvas.Left="10" Canvas.Top="39" Width="103" />
+        <Label x:Name="lblOutput" Content="" Canvas.Left="10" Canvas.Top="64" Width="103" />
     </Canvas>
 </Window>
