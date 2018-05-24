@@ -1,0 +1,17 @@
+<Window x:Class="U5Quadratic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:U5Quadratic"
+        mc:Ignorable="d"
+        Title="MainWindow" MaxHeight="500" MaxWidth="650" MinHeight="500" MinWidth="650">
+
+    <Canvas x:Name="canvas">
+        <TextBox x:Name="txtA" Text="a" Canvas.Left="10" Canvas.Top="10" />
+        <TextBox x:Name="txtB" Text="b" Canvas.Left="42" Canvas.Top="8" />
+        <TextBox x:Name="txtC" Text="c" Canvas.Left="73" Canvas.Top="10" />
+        <Button x:Name="btnRun" Content="Calculate" Click="btnRun_Click" Canvas.Left="10" Canvas.Top="39" Width="75" />
+        <Label x:Name="lblOutput" Content="" Canvas.Left="336" Canvas.Top="8" />
+    </Canvas>
+</Window>
