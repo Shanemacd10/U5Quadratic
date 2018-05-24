@@ -19,7 +19,7 @@ namespace U5Quadratic
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {  
+    {
         int a;
         int b;
         int c;
@@ -44,46 +44,78 @@ namespace U5Quadratic
             line2.Y1 = 250;
             line2.Y2 = 250;
             canvas.Children.Add(line2);
-        }
-      
 
+        for( int i = 0; i < 41; i++)
+            {
+                Rectangle tick1 = new Rectangle();
+                tick1.Height = 10;
+                tick1.Width = 1;
+                tick1.Fill = Brushes.Black;
+                Canvas.SetLeft(tick1, 125 + i * 10);
+                Canvas.SetTop(tick1, 245);
+                canvas.Children.Add(tick1);
+
+                Rectangle tick2 = new Rectangle();
+                tick2.Height = 1;
+                tick2.Width = 10;
+                tick2.Fill = Brushes.Black;
+                Canvas.SetLeft(tick2, 320);
+                Canvas.SetTop(tick2, 50 + i * 10);
+                canvas.Children.Add(tick2);
+            }
+        }
+        public virtual void RemoveRange( int index, int count)
+        {
+        }
         public void btnRun_Click(object sender, RoutedEventArgs e)
         {
-            
+            canvas.Children.RemoveRange(89, 6002);
             a = Convert.ToInt32(txtA.Text);
-             b = Convert.ToInt32(txtB.Text);
-             c = Convert.ToInt32(txtC.Text);
-            if (Convert.ToDouble((b * b) - (4 * a * c)) < 0)
+            b = Convert.ToInt32(txtB.Text);
+            c = Convert.ToInt32(txtC.Text);
+            
+           if (Convert.ToDouble((b * b) - (4 * a * c)) < 0)
             {
                 lblOutput.Content = "No zeros";
             }
-            else if(Convert.ToDouble((b * b) - (4 * a * c)) == 0)
-                {
+            else if (Convert.ToDouble((b * b) - (4 * a * c)) == 0)
+            {
                 double output1 = ((-b + Math.Sqrt((b * b) - 4 * a * c)) / (2 * a));
                 lblOutput.Content = output1.ToString();
+                redDot(output1);
             }
             else
             {
                 double output1 = ((-b + Math.Sqrt((b * b) - 4 * a * c)) / (2 * a));
                 double output2 = ((-b - Math.Sqrt((b * b) - 4 * a * c)) / (2 * a));
-                lblOutput.Content = output1.ToString() + "\n" +"\r" + output2.ToString();
+                lblOutput.Content = output1.ToString() + ", " + output2.ToString();
+                redDot(output1);
+                redDot(output2);
             }
-            for(int i = -1000; i < 1000; i++)
+            for (int i = -3000; i < 3000; i++)
             {
                 generateDot(i);
             }
-            
         }
         public void generateDot(int x)
         {
             Ellipse ellipsex = new Ellipse();
-            ellipsex.Width = 3;
-            ellipsex.Height = 3;
+            ellipsex.Width = 2;
+            ellipsex.Height = 2;
             ellipsex.Fill = Brushes.Black;
-            Canvas.SetLeft(ellipsex, (x*0.01)*10 + 325);
-            Canvas.SetTop(ellipsex, (250 - (((x*0.01*x*0.01)*a + x*0.01*b + c)*10) ));
+            Canvas.SetLeft(ellipsex, (x * 0.005) * 10 + 325);
+            Canvas.SetTop(ellipsex, (250 - (((x * 0.005 * x * 0.005) * a + x * 0.005 * b + c) * 10)));
             canvas.Children.Add(ellipsex);
         }
-        
+        public void redDot(double y)
+        {
+            Ellipse ellipsey = new Ellipse();
+            ellipsey.Width = 6;
+            ellipsey.Height = 6;
+            Canvas.SetLeft(ellipsey, 323 + y*10);
+            Canvas.SetTop(ellipsey, 247);
+            ellipsey.Fill = Brushes.Red;
+            canvas.Children.Add(ellipsey);
+        }
     }
 }
