@@ -1,3 +1,8 @@
+/* Quadratic 
+ * Shane MacDonald
+ * June 4 2018
+ * Program takes inout of a, b, and c values for a quadratic equation then calculated the roots and graphs it
+ */
 using System;
 using System.Collections.Generic;
 using System.Linq;
